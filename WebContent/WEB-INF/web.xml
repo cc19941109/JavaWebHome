@@ -1,0 +1,38 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<servlet>
+		<servlet-name>ResponseDemo01</servlet-name>
+		<servlet-class>chen.servlet.ResponseDemo01</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>GiraffeTree</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value>123456</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResponseDemo01</servlet-name>
+		<url-pattern>/ResponseDemo01</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ResponseDemo02</servlet-name>
+		<servlet-class>chen.servlet.ResponseDemo02</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ResponseDemo02</servlet-name>
+		<url-pattern>/ResponseDemo02</url-pattern>
+	</servlet-mapping>
+
+
+	<context-param>
+		<param-name>age</param-name>
+		<param-value>100</param-value>
+	</context-param>
+
+</web-app>
