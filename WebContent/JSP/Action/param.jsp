@@ -4,15 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>include</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<%
-		int i = 10;
-	%>
-	<h1>
-		include.jsp中i的值为：<%=i%></h1>
-	<h2><%=request.getParameter("parm1")%></h2>
-	<h2><%=request.getParameter("parm2")%></h2>
+	<jsp:include page="/JSP/Action/include.jsp">
+		<jsp:param name="parm1" value="hello" />
+		<jsp:param name="parm2" value="giraffe tree" />
+	</jsp:include>
+	<%-- 	<jsp:forward page="include.jsp"/> --%>
 </body>
 </html>

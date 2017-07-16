@@ -15,8 +15,11 @@
 	</h1>
 	<!-- Duplicate local variable i 指令 会提示重复定义-->
 	<%-- 	<%@include file="/JSP/Action/include.jsp"%>--%>
-	//在 include标签中，定义的是两个不同的变量
+	//在 include标签中，定义的是两个不同的变量  动态包含
 	<jsp:include page="/JSP/Action/include.jsp" />
-
+	<hr/>
+	<%@include file  = "/JSP/Part/head.jspf" %>
+	<hr/>
+	<jsp:include page="/JSP/Part/head.jspf"/>
 </body>
 </html>

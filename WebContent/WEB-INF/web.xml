@@ -34,11 +34,18 @@
 		<param-name>age</param-name>
 		<param-value>100</param-value>
 	</context-param>
-	
+
 	<!-- 如果设置了某个JSP页面的errorPage属性，那么在web.xml文件中设置的错误处理将不对该页面起作用。 -->
-<!-- 	<error-page>
-		<error-code>404</error-code>
-		<location>/JSP/Basic/err.jsp</location>
-	</error-page> -->
+	<!-- <error-page> <error-code>404</error-code> <location>/JSP/Basic/err.jsp</location> 
+		</error-page> -->
+
+	<!-- 让jspf扩展名同样成为JSP Servlet处理的文件。 -->
+	<!-- The mappings for the JSP servlet -->
+	<servlet-mapping>
+		<servlet-name>jsp</servlet-name>
+		<url-pattern>*.jsp</url-pattern>
+		<url-pattern>*.jspx</url-pattern>
+		<url-pattern>*.jspf</url-pattern>
+	</servlet-mapping>
 
 </web-app>
