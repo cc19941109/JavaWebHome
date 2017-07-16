@@ -1,12 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page import="java.util.*"%>
-<%
-    //此时设置的属性只能够在本页中取得
-    pageContext.setAttribute("name","长脖子树");  //设置属性
-    pageContext.setAttribute("date",new Date()); //设置属性
-    //注意：这里设置的两个属性的名字分别为name和date，这两个是字符串类型的数据，但对应的属性值MLDN和new Date这个两个值却不是字符串类型，而是两个Object类型的数据。
 
-%>
 <%
     //取得设置的属性
     String refName = (String)pageContext.getAttribute("name");  
@@ -17,8 +11,22 @@
 <h1>日期：<%=refDate%></h1>
 
 <%
+    String refName1 = (String)request.getAttribute("name1");  
+    Date refDate1 = (Date)request.getAttribute("date1");
+%>
+<h1>姓名：<%=refName1%></h1>
+<h1>日期：<%=refDate1%></h1>
+
+<%
     String refName2 = (String)session.getAttribute("name2");  
     Date refDate2 = (Date)session.getAttribute("date2");
 %>
 <h1>姓名：<%=refName2%></h1>
 <h1>日期：<%=refDate2%></h1>
+
+<%
+    String refName3 = (String)application.getAttribute("name3");
+    Date refDate3 = (Date)application.getAttribute("date3");
+%>
+<h1>姓名：<%=refName3%></h1>
+<h1>日期：<%=refDate3%></h1>

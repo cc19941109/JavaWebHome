@@ -1,13 +1,25 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@page import="java.util.*"%>
 <%
-    //此时设置的属性只能够在本页中取得
+   /*  //此时设置的属性只能够在本页中取得
     pageContext.setAttribute("name","长脖子树");  //设置属性
     pageContext.setAttribute("date",new Date()); //设置属性
     //注意：这里设置的两个属性的名字分别为name和date，这两个是字符串类型的数据，但对应的属性值MLDN和new Date这个两个值却不是字符串类型，而是两个Object类型的数据。
 
+    request.setAttribute("name1","giraffe tree");  
+    request.setAttribute("date1",new Date()); 
+    
+    session.setAttribute("name2","你好");  //设置属性
+    session.setAttribute("date2",new Date());
+    
+    application.setAttribute("name3","application 属性设置完成");  //设置属性
+    application.setAttribute("date3",new Date()); */
+
 %>
 <%
+	//服务器跳转 地址栏不改变  request 属性可以传递 session 属性可以传递
+	//而客户端跳转 如 使用超链接，则 地址栏改变，request 属性不能传递  session 属性也可以传递
+	//切换浏览器  切换用户时，除了application 属性保留  其他都不行
     //取得设置的属性
     String refName = (String)pageContext.getAttribute("name");  
     //由于取得的值为Object类型，因此必须使用String强制向下转型，转换成String类型
@@ -16,9 +28,4 @@
 <h1>姓名：<%=refName%></h1>
 <h1>日期：<%=refDate%></h1>
 
-<%
-    String refName2 = (String)session.getAttribute("name2");  
-    Date refDate2 = (Date)session.getAttribute("date2");
-%>
-<h1>姓名：<%=refName2%></h1>
-<h1>日期：<%=refDate2%></h1>
+<jsp:forward page="/JSP/jspRange/page3.jsp" />
