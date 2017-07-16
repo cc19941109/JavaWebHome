@@ -34,5 +34,11 @@
 		<param-name>age</param-name>
 		<param-value>100</param-value>
 	</context-param>
+	
+	<!-- 如果设置了某个JSP页面的errorPage属性，那么在web.xml文件中设置的错误处理将不对该页面起作用。 -->
+<!-- 	<error-page>
+		<error-code>404</error-code>
+		<location>/JSP/Basic/err.jsp</location>
+	</error-page> -->
 
 </web-app>
